@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
 	android:padding="5dp"
     tools:context="com.example.main.MainActivity$PlaceholderFragment"
-      android:background="@drawable/background"  >
+      android:background="@drawable/background"
+      android:id="@+id/Rel1" >
 
     <TextView
         android:id="@+id/textView1"
@@ -18,15 +19,25 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <ImageButton
+
         android:id="@+id/imageButton1"
+
         android:layout_width="150dp"
+
         android:layout_height="150dp"
+
         android:layout_alignParentLeft="true"
+
         android:layout_alignParentTop="true"
+
         app:layout_column="0"
+
         app:layout_gravity="left|top"
+
         app:layout_row="0"
+
         android:scaleType="fitCenter"
+
         android:src="@drawable/pizza" />
 
     <Button
@@ -47,5 +58,18 @@
         android:layout_toLeftOf="@+id/button1"
         android:text="Total"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageButton
+        android:id="@+id/ImageButton2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignTop="@+id/imageButton1"
+        android:layout_marginLeft="31dp"
+        android:layout_toRightOf="@+id/imageButton1"
+        app:layout_column="0"
+        app:layout_gravity="left|top"
+        app:layout_row="0"
+        android:scaleType="fitCenter"
+        android:src="@drawable/hotdog" />
 
 </RelativeLayout>
