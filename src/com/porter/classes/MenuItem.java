@@ -6,4 +6,6 @@ public interface MenuItem {
 	public void setName(String name);
 	public double getPrice();
 	public void setPrice(double price);
+	public int getCount();
+	public void setCount(int count);
 }

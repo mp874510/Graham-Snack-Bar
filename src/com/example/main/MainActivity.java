@@ -16,10 +16,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 import android.os.Build;
 
 public class MainActivity extends ActionBarActivity {
 	static RelativeLayout rl;
+	Register cashRegister;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -29,13 +31,23 @@ public class MainActivity extends ActionBarActivity {
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
 		
-		Register cashRegister = new RegisterImp();
+		cashRegister = new RegisterImp();
 		cashRegister.addItem("Pizza", 2.50);
 		cashRegister.addItem("hotdog", 1.50);
 		
 		
 	
 		
+	}
+	
+	public void buyItem(View v){
+		
+		switch(v.getId()){
+		case (R.id.imageButton1):
+			cashRegister.purchaseItem("Pizza");
+		double total = cashRegister.getTotal();
+		    Toast.makeText(this, ""+total, Toast.LENGTH_LONG).show();
+		}
 	}
 
 	@Override

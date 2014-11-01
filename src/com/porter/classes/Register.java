@@ -9,4 +9,6 @@ public interface Register {
 	public void purchaseItem(String name);
 	
 	public double checkout();
+	public double getTotal();
+	public void setTotal(double t);
 }
