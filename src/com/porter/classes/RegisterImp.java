@@ -1,6 +1,7 @@
 package com.porter.classes;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class RegisterImp implements Register {
@@ -22,13 +23,13 @@ public class RegisterImp implements Register {
 		menuItems.put(name, item);
 	}
 	
-	public MenuItemImp getItemByName(String name){
-		return (MenuItemImp) menuItems.get(name);
+	public MenuItem getItemByName(String name){
+		return (MenuItem) menuItems.get(name);
 	}
 	
 	public void purchaseItem(String name){
-		MenuItemImp item = getItemByName(name);
-		total += item.getPrice();
+		MenuItem item = getItemByName(name);
+		total = (item.getPrice() + total);
 		item.setCount(item.getCount()+1);
 	}
 	
@@ -39,6 +40,22 @@ public class RegisterImp implements Register {
 		return t;
 		
 		
+	}
+	public String getTotalMessage(){
+		String totalMessage = new String();
+		
+		Iterator it = menuItems.entrySet().iterator();
+		while(it.hasNext()){
+			Map.Entry item = (Map.Entry)it.next();
+			String name = (String) item.getKey();
+			MenuItem items = (MenuItem) item.getValue();
+			if(items.getCount() > 0){
+				totalMessage = totalMessage + name + " X " + items.getCount() + "\n";
+			}
+			
+		}
+		
+		return totalMessage;
 	}
 	
 	

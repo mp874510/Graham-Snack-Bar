@@ -4,7 +4,7 @@ public class MenuItemImp implements MenuItem{
 	
 	private String name;
 	private double price;
-	
+	private int count;
 	MenuItemImp(){}
 	MenuItemImp(String n, double p){
 		setName(n);
@@ -21,6 +21,12 @@ public class MenuItemImp implements MenuItem{
 	}
 	public void setPrice(double price) {
 		this.price = price;
+	}
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
 	}
 	
 }

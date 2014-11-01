@@ -33,7 +33,7 @@ public class MainActivity extends ActionBarActivity {
 		
 		cashRegister = new RegisterImp();
 		cashRegister.addItem("Pizza", 2.50);
-		cashRegister.addItem("hotdog", 1.50);
+		cashRegister.addItem("Hotdog", 1.50);
 		
 		
 	
@@ -45,8 +45,16 @@ public class MainActivity extends ActionBarActivity {
 		switch(v.getId()){
 		case (R.id.imageButton1):
 			cashRegister.purchaseItem("Pizza");
-		double total = cashRegister.getTotal();
-		    Toast.makeText(this, ""+total, Toast.LENGTH_LONG).show();
+			double total = 0;
+			String tMessage = cashRegister.getTotalMessage();
+		    Toast.makeText(this, tMessage, Toast.LENGTH_LONG).show();
+		    break;
+		case(R.id.ImageButton2):
+			cashRegister.purchaseItem("Hotdog");
+			double total2 = 0;
+			String tMessage2 = cashRegister.getTotalMessage();
+		    Toast.makeText(this, tMessage2, Toast.LENGTH_LONG).show();
+		    break;
 		}
 	}
 
