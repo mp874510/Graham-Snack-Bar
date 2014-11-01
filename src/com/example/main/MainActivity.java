@@ -1,6 +1,8 @@
 package com.example.main;
 
 import com.example.test.R;
+import com.porter.classes.Register;
+import com.porter.classes.RegisterImp;
 
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
@@ -11,10 +13,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.os.Build;
 
 public class MainActivity extends ActionBarActivity {
-
+	static RelativeLayout rl;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -23,6 +28,14 @@ public class MainActivity extends ActionBarActivity {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
+		
+		Register cashRegister = new RegisterImp();
+		cashRegister.addItem("Pizza", 2.50);
+		cashRegister.addItem("hotdog", 1.50);
+		
+		
+	
+		
 	}
 
 	@Override
@@ -57,7 +70,15 @@ public class MainActivity extends ActionBarActivity {
 				Bundle savedInstanceState) {
 			View rootView = inflater.inflate(R.layout.fragment_main, container,
 					false);
+			
+	
+
+			
+			
+			
 			return rootView;
+			
+			
 		}
 	}
 }
