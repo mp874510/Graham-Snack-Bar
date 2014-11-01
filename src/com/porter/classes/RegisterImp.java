@@ -7,6 +7,12 @@ public class RegisterImp implements Register {
 	private Map menuItems;
 	private double total;
 	
+	public double getTotal(){
+		return total;
+	}
+	public void setTotal(double t){
+		this.total = t;
+	}
 	public RegisterImp(){
 		menuItems = new HashMap();
 		total = 0;
@@ -23,6 +29,7 @@ public class RegisterImp implements Register {
 	public void purchaseItem(String name){
 		MenuItemImp item = getItemByName(name);
 		total += item.getPrice();
+		item.setCount(item.getCount()+1);
 	}
 	
 	public double checkout(){
