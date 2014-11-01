@@ -16,6 +16,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/imageButton1"
         android:background="@drawable/box"
+        android:gravity="center_horizontal"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <ImageButton
@@ -62,6 +63,7 @@
         app:layout_gravity="left|top"
         app:layout_row="0"
         android:scaleType="fitCenter"
-        android:src="@drawable/hotdog" />
+        android:src="@drawable/hotdog"
+        android:onClick="buyItem" />
 
 </RelativeLayout>

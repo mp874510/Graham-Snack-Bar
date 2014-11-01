@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.os.Build;
 
@@ -44,18 +45,21 @@ public class MainActivity extends ActionBarActivity {
 		
 		switch(v.getId()){
 		case (R.id.imageButton1):
-			cashRegister.purchaseItem("Pizza");
-			double total = 0;
-			String tMessage = cashRegister.getTotalMessage();
-		    Toast.makeText(this, tMessage, Toast.LENGTH_LONG).show();
+		    addItem("Pizza");
 		    break;
 		case(R.id.ImageButton2):
-			cashRegister.purchaseItem("Hotdog");
-			double total2 = 0;
-			String tMessage2 = cashRegister.getTotalMessage();
-		    Toast.makeText(this, tMessage2, Toast.LENGTH_LONG).show();
+			addItem("Hotdog");
 		    break;
 		}
+	}
+	
+	public void addItem(String i){
+		cashRegister.purchaseItem(i);
+		double total = 0;
+		String tMessage = cashRegister.getTotalMessage();
+	    Toast.makeText(this, tMessage, Toast.LENGTH_LONG).show();
+	    TextView menu = (TextView)findViewById(R.id.textView1);
+	    menu.setText(tMessage);
 	}
 
 	@Override

@@ -1,5 +1,6 @@
 package com.porter.classes;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -50,7 +51,8 @@ public class RegisterImp implements Register {
 			String name = (String) item.getKey();
 			MenuItem items = (MenuItem) item.getValue();
 			if(items.getCount() > 0){
-				totalMessage = totalMessage + name + " X " + items.getCount() + "\n";
+				 
+				totalMessage = totalMessage + name + " X " + items.getCount() + " $"+(items.getCount() * items.getPrice()) + "\n";
 			}
 			
 		}
