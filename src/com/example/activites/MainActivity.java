@@ -1,12 +1,14 @@
-package com.example.main;
+package com.example.activites;
+
+import java.text.DecimalFormat;
 
 import com.example.test.R;
 import com.porter.classes.Register;
 import com.porter.classes.RegisterImp;
 
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -14,11 +16,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.os.Build;
 
 public class MainActivity extends ActionBarActivity {
 	static RelativeLayout rl;
@@ -55,13 +55,21 @@ public class MainActivity extends ActionBarActivity {
 	
 	public void addItem(String i){
 		cashRegister.purchaseItem(i);
-		double total = 0;
+		
 		String tMessage = cashRegister.getTotalMessage();
 	    Toast.makeText(this, tMessage, Toast.LENGTH_LONG).show();
 	    TextView menu = (TextView)findViewById(R.id.textView1);
 	    menu.setText(tMessage);
+	    Button btn = (Button)findViewById(R.id.button1);
+	    DecimalFormat df = new DecimalFormat("0.00");
+	    String total_text = df.format(cashRegister.getTotal());
+	    total_text = "$"+total_text;
+	    btn.setText(total_text);
 	}
-
+	public void checkout (View v){
+		Intent intent = new Intent(this, Checkout.class);
+		startActivity(intent);
+	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

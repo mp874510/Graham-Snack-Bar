@@ -51,8 +51,8 @@ public class RegisterImp implements Register {
 			String name = (String) item.getKey();
 			MenuItem items = (MenuItem) item.getValue();
 			if(items.getCount() > 0){
-				 
-				totalMessage = totalMessage + name + " X " + items.getCount() + " $"+(items.getCount() * items.getPrice()) + "\n";
+				DecimalFormat df = new DecimalFormat("0.00");
+				totalMessage = totalMessage + name + " X " + items.getCount() + " $"+df.format((items.getCount() * items.getPrice())) + "\n";
 			}
 			
 		}

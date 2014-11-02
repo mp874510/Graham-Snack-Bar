@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 	android:padding="5dp"
-    tools:context="com.example.main.MainActivity$PlaceholderFragment"
+    tools:context="com.example.activites.MainActivity$PlaceholderFragment"
       android:background="@drawable/background"
       android:id="@+id/Rel1" >
 
@@ -40,7 +40,8 @@
         android:layout_alignLeft="@+id/textView1"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/textView1"
-        android:text="$ 0.00" />
+        android:text="$ 0.00"
+        android:onClick="checkout" />
 
     <TextView
         android:id="@+id/textView2"
