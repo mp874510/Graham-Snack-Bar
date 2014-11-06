@@ -44,7 +44,7 @@ public class MainActivity extends ActionBarActivity {
 	public void buyItem(View v){
 		
 		switch(v.getId()){
-		case (R.id.imageButton1):
+		case (R.id.pizza):
 		    addItem("Pizza");
 		    break;
 		case(R.id.ImageButton2):
@@ -60,7 +60,7 @@ public class MainActivity extends ActionBarActivity {
 	    Toast.makeText(this, tMessage, Toast.LENGTH_LONG).show();
 	    TextView menu = (TextView)findViewById(R.id.textView1);
 	    menu.setText(tMessage);
-	    Button btn = (Button)findViewById(R.id.button1);
+	    Button btn = (Button)findViewById(R.id.zero);
 	    DecimalFormat df = new DecimalFormat("0.00");
 	    String total_text = df.format(cashRegister.getTotal());
 	    total_text = "$"+total_text;

@@ -12,16 +12,15 @@
         android:id="@+id/textView1"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
+        android:layout_above="@+id/zero"
         android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/imageButton1"
+        android:layout_alignTop="@+id/pizza"
         android:background="@drawable/box"
         android:gravity="center_horizontal"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <ImageButton
-
-        android:id="@+id/imageButton1"
+        android:id="@+id/pizza"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_alignParentLeft="true"
@@ -29,12 +28,12 @@
         app:layout_column="0"
         app:layout_gravity="left|top"
         app:layout_row="0"
+        android:onClick="buyItem"
         android:scaleType="fitCenter"
-        android:src="@drawable/pizza"
-        android:onClick="buyItem" />
+        android:src="@drawable/pizza" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/zero"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView1"
@@ -44,12 +43,12 @@
         android:onClick="checkout" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/AmountDue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button1"
-        android:layout_alignBottom="@+id/button1"
-        android:layout_toLeftOf="@+id/button1"
+        android:layout_alignBaseline="@+id/zero"
+        android:layout_alignBottom="@+id/zero"
+        android:layout_toLeftOf="@+id/zero"
         android:text="Total"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -57,9 +56,9 @@
         android:id="@+id/ImageButton2"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_alignTop="@+id/imageButton1"
+        android:layout_alignTop="@+id/pizza"
         android:layout_marginLeft="31dp"
-        android:layout_toRightOf="@+id/imageButton1"
+        android:layout_toRightOf="@+id/pizza"
         app:layout_column="0"
         app:layout_gravity="left|top"
         app:layout_row="0"
