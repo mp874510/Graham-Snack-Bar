@@ -52,7 +52,17 @@ public class MainActivity extends ActionBarActivity {
 		    break;
 		}
 	}
-	
+	public void newRegister(){
+		cashRegister = new RegisterImp();
+		cashRegister.addItem("Pizza", 2.50);
+		cashRegister.addItem("Hotdog", 1.50);
+		TextView menu = (TextView)findViewById(R.id.textView1);
+		menu.setText("");
+		Button btn = (Button)findViewById(R.id.zero);
+		btn.setText("$0.00");
+		
+		
+	}
 	public void addItem(String i){
 		cashRegister.purchaseItem(i);
 		
@@ -68,6 +78,10 @@ public class MainActivity extends ActionBarActivity {
 	}
 	public void checkout (View v){
 		Intent intent = new Intent(this, Checkout.class);
+		intent.putExtra("total", cashRegister.checkout());
+		newRegister();
+
+		
 		startActivity(intent);
 	}
 	@Override
@@ -107,7 +121,7 @@ public class MainActivity extends ActionBarActivity {
 
 			
 			
-			
+		
 			return rootView;
 			
 			

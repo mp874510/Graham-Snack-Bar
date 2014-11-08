@@ -145,7 +145,8 @@
         android:layout_alignParentTop="true"
         android:text="Amount Given"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="44dp" />
+        android:textSize="44dp"
+         />
 
     <TextView
         android:id="@+id/textView1"
@@ -167,6 +168,7 @@
         android:gravity="center_horizontal"
         android:text="$0.00"
         android:textAppearance="?android:attr/textAppearanceLarge"
+        
         android:textSize="30dp" />
 
     <ImageButton
@@ -179,7 +181,8 @@
         android:layout_alignTop="@+id/three"
         android:layout_marginRight="28dp"
         android:scaleType="fitCenter"
-        android:src="@drawable/cart" />
+        android:src="@drawable/cart"
+         android:onClick="checkout"/>
 
     <ImageButton
         android:id="@+id/undo"
