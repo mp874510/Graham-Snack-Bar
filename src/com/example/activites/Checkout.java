@@ -5,12 +5,16 @@ import java.text.DecimalFormat;
 import com.example.test.R;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
@@ -71,10 +75,55 @@ public class Checkout extends Activity {
 	
 	public void checkout(View v){
 
+		if(!isEnoughMoney())
+			showNotEnoughMessage();
+		else
+			showChangeMessage();
 		
+		
+		
+		
+		
+		//final Dialog dialog = new Dialog(this);
+
+        //dialog.setContentView(R.layout.custom_dialog);
+        //dialog.setTitle("Custom Alert Dialog");
+
+      //  final EditText editText=(EditText)dialog.findViewById(R.id.editText);
+       // Button save=(Button)dialog.findViewById(R.id.save);
+        //Button btnCancel=(Button)dialog.findViewById(R.id.cancel);
+      //  dialog.show();
 		
 	}
+	public void showChangeMessage(){
+		final Dialog dialog = new Dialog(this);
+
+        dialog.setContentView(R.layout.custom_dialog);
+        dialog.setTitle("Custom Alert Dialog");
+
+        final EditText editText=(EditText)dialog.findViewById(R.id.editText);
+        Button save=(Button)dialog.findViewById(R.id.save);
+        Button btnCancel=(Button)dialog.findViewById(R.id.cancel);
+        dialog.show();
+	}
 	
+	public void showNotEnoughMessage(){
+		new AlertDialog.Builder(this)
+	    .setTitle("Not Enough Money")
+	    .setMessage("The Amount Given is less than the Amount Due. Please enter the correct amount given")
+	    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+	        public void onClick(DialogInterface dialog, int which) { 
+	            // continue with delete
+	        }
+	     })
+	    //.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+	    //    public void onClick(DialogInterface dialog, int which) { 
+	            // do nothing
+	    //    }
+	    // })
+	    .setIcon(android.R.drawable.ic_dialog_alert)
+	     .show();
+	}
 	public void addTotal(double i){
 		
 		TextView amountGiven = (TextView)findViewById(R.id.AmountGiven);
@@ -94,6 +143,10 @@ public class Checkout extends Activity {
 	public void undo(View v){
 		TextView amountGiven = (TextView)findViewById(R.id.AmountGiven);
 		amountGiven.setText("$0.00");
+	    if(!isEnoughMoney())
+			amountGiven.setTextColor(Color.RED);
+	    else
+	    	amountGiven.setTextColor(Color.BLACK);
 	}
 	
 	public boolean isEnoughMoney(){
