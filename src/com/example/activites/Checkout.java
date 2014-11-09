@@ -82,18 +82,6 @@ public class Checkout extends Activity {
 		
 		
 		
-		
-		
-		//final Dialog dialog = new Dialog(this);
-
-        //dialog.setContentView(R.layout.custom_dialog);
-        //dialog.setTitle("Custom Alert Dialog");
-
-      //  final EditText editText=(EditText)dialog.findViewById(R.id.editText);
-       // Button save=(Button)dialog.findViewById(R.id.save);
-        //Button btnCancel=(Button)dialog.findViewById(R.id.cancel);
-      //  dialog.show();
-		
 	}
 	public void showChangeMessage(){
 		final Dialog dialog = new Dialog(this);
