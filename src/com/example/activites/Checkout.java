@@ -13,6 +13,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.PopupWindow;
@@ -77,22 +78,41 @@ public class Checkout extends Activity {
 
 		if(!isEnoughMoney())
 			showNotEnoughMessage();
-		else
-			showChangeMessage();
-		
+		else{
+			String change = calculateChange();
+			showChangeMessage(change);
+		}
 		
 		
 	}
-	public void showChangeMessage(){
+	public void showChangeMessage(String change){
 		final Dialog dialog = new Dialog(this);
-
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.custom_dialog);
-        dialog.setTitle("Custom Alert Dialog");
-
-        final EditText editText=(EditText)dialog.findViewById(R.id.editText);
+       
         Button save=(Button)dialog.findViewById(R.id.save);
         Button btnCancel=(Button)dialog.findViewById(R.id.cancel);
+      
+        
         dialog.show();
+        TextView changeText = (TextView)dialog.findViewById(R.id.textView2);
+        changeText.setText(change);
+
+	}
+	
+	public String calculateChange(){
+		String change = new String();
+		TextView amountDueText = (TextView)findViewById(R.id.AmountDue);
+		TextView amountGivenText = (TextView)findViewById(R.id.AmountGiven);
+		
+		double amountDue = Double.parseDouble(amountDueText.getText().toString().substring(1));
+		double amountGiven = Double.parseDouble(amountGivenText.getText().toString().substring(1));
+		
+		double changeCalc = amountGiven - amountDue;
+		DecimalFormat df = new DecimalFormat("0.00");
+		change = "$" + df.format(changeCalc);
+	
+		return change;
 	}
 	
 	public void showNotEnoughMessage(){
@@ -104,11 +124,7 @@ public class Checkout extends Activity {
 	            // continue with delete
 	        }
 	     })
-	    //.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-	    //    public void onClick(DialogInterface dialog, int which) { 
-	            // do nothing
-	    //    }
-	    // })
+
 	    .setIcon(android.R.drawable.ic_dialog_alert)
 	     .show();
 	}
