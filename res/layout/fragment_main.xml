@@ -66,4 +66,125 @@
         android:src="@drawable/hotdog"
         android:onClick="buyItem" />
 
+    <ImageButton
+        android:id="@+id/ImageButton01"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignTop="@+id/ImageButton2"
+        android:layout_marginLeft="28dp"
+        android:layout_toRightOf="@+id/ImageButton2"
+        app:layout_column="0"
+        app:layout_gravity="left|top"
+        app:layout_row="0"
+        android:onClick="buyItem"
+        android:scaleType="fitCenter"
+        android:src="@drawable/gatorade" />
+
+    <ImageButton
+        android:id="@+id/ImageButton02"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignTop="@+id/ImageButton01"
+        android:layout_marginLeft="41dp"
+        android:layout_toRightOf="@+id/ImageButton01"
+        app:layout_column="0"
+        app:layout_gravity="left|top"
+        app:layout_row="0"
+        android:onClick="buyItem"
+        android:scaleType="fitCenter"
+        android:src="@drawable/water" />
+
+    <ImageButton
+        android:id="@+id/ImageButton03"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/ImageButton2"
+        app:layout_column="0"
+        app:layout_gravity="left|top"
+        app:layout_row="0"
+        android:onClick="buyItem"
+        android:scaleType="fitCenter"
+        android:src="@drawable/nachos" />
+
+    <ImageButton
+        android:id="@+id/ImageButton05"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignTop="@+id/ImageButton03"
+        android:layout_toLeftOf="@+id/ImageButton02"
+        app:layout_column="0"
+        app:layout_gravity="left|top"
+        app:layout_row="0"
+        android:onClick="buyItem"
+        android:scaleType="fitCenter"
+        android:src="@drawable/soda" />
+
+    <ImageButton
+        android:id="@+id/ImageButton04"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignTop="@+id/ImageButton05"
+        android:layout_toLeftOf="@+id/ImageButton01"
+        app:layout_column="0"
+        app:layout_gravity="left|top"
+        app:layout_row="0"
+        android:onClick="buyItem"
+        android:scaleType="fitCenter"
+        android:src="@drawable/candybar" />
+
+    <ImageButton
+        android:id="@+id/ImageButton06"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignLeft="@+id/ImageButton02"
+        android:layout_below="@+id/ImageButton02"
+        app:layout_column="0"
+        app:layout_gravity="left|top"
+        app:layout_row="0"
+        android:onClick="buyItem"
+        android:scaleType="fitCenter"
+        android:src="@drawable/carmel" />
+
+    <ImageButton
+        android:id="@+id/ImageButton08"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_above="@+id/ImageButton06"
+        android:layout_marginLeft="47dp"
+        android:layout_toRightOf="@+id/ImageButton02"
+        app:layout_column="0"
+        app:layout_gravity="left|top"
+        app:layout_row="0"
+        android:onClick="buyItem"
+        android:scaleType="fitCenter"
+        android:src="@drawable/popcorn" />
+
+    <ImageButton
+        android:id="@+id/ImageButton07"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignLeft="@+id/ImageButton08"
+        android:layout_alignTop="@+id/ImageButton06"
+        app:layout_column="0"
+        app:layout_gravity="left|top"
+        app:layout_row="0"
+        android:onClick="buyItem"
+        android:scaleType="fitCenter"
+        android:src="@drawable/licorice" />
+
+    <ImageButton
+        android:id="@+id/ImageButton09"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignBottom="@+id/zero"
+        android:layout_marginRight="41dp"
+        android:layout_toLeftOf="@+id/AmountDue"
+        app:layout_column="0"
+        app:layout_gravity="left|top"
+        app:layout_row="0"
+        android:onClick="clearOrder"
+        android:scaleType="fitCenter"
+        android:src="@drawable/trashcan" />
+
 </RelativeLayout>

@@ -33,10 +33,16 @@ public class MainActivity extends ActionBarActivity {
 		}
 		
 		cashRegister = new RegisterImp();
-		cashRegister.addItem("Pizza", 2.50);
+		cashRegister.addItem("Pizza", 2.00);
 		cashRegister.addItem("Hotdog", 1.50);
-		
-		
+		cashRegister.addItem("Gatorade", 2.00);
+		cashRegister.addItem("Water", 1.00);
+		cashRegister.addItem("Nachos", 1.50);
+		cashRegister.addItem("Soda", 1.00);
+		cashRegister.addItem("Popcorn", 1.00);
+		cashRegister.addItem("Candy Bar", 1.00);
+		cashRegister.addItem("Carmel Apple Sucker", 0.25);
+		cashRegister.addItem("Twizzlers", 0.25);
 	
 		
 	}
@@ -49,13 +55,45 @@ public class MainActivity extends ActionBarActivity {
 		    break;
 		case(R.id.ImageButton2):
 			addItem("Hotdog");
+			break;
+		case(R.id.ImageButton01):
+			addItem("Gatorade");
+			break;
+		case(R.id.ImageButton02):
+			addItem("Water");
+			break;
+		case(R.id.ImageButton03):
+			addItem("Nachos");
+			break;
+		case(R.id.ImageButton05):
+			addItem("Soda");
 		    break;
+		case(R.id.ImageButton08):
+			addItem("Popcorn");
+			break;
+		case(R.id.ImageButton04):
+			addItem("Candy Bar");
+			break;
+		case(R.id.ImageButton06):
+			addItem("Carmel Apple Sucker");
+			break;
+		case(R.id.ImageButton07):
+			addItem("Twizzlers");
+			break;
 		}
 	}
 	public void newRegister(){
 		cashRegister = new RegisterImp();
 		cashRegister.addItem("Pizza", 2.50);
 		cashRegister.addItem("Hotdog", 1.50);
+		cashRegister.addItem("Gatorade", 2.00);
+		cashRegister.addItem("Water", 1.00);
+		cashRegister.addItem("Nachos", 1.50);
+		cashRegister.addItem("Soda", 1.00);
+		cashRegister.addItem("Popcorn", 1.00);
+		cashRegister.addItem("Candy Bar", 1.00);
+		cashRegister.addItem("Carmel Apple Sucker", 0.25);
+		cashRegister.addItem("Twizzlers", 0.25);
 		TextView menu = (TextView)findViewById(R.id.textView1);
 		menu.setText("");
 		Button btn = (Button)findViewById(R.id.zero);
@@ -67,7 +105,7 @@ public class MainActivity extends ActionBarActivity {
 		cashRegister.purchaseItem(i);
 		
 		String tMessage = cashRegister.getTotalMessage();
-	    Toast.makeText(this, tMessage, Toast.LENGTH_LONG).show();
+	 
 	    TextView menu = (TextView)findViewById(R.id.textView1);
 	    menu.setText(tMessage);
 	    Button btn = (Button)findViewById(R.id.zero);
@@ -126,5 +164,9 @@ public class MainActivity extends ActionBarActivity {
 			
 			
 		}
+	}
+	
+	public void clearOrder(View v){
+		newRegister();
 	}
 }
